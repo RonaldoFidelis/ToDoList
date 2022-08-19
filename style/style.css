@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: black;
+}
+
+
+
+/* ------------Div Main----------------- */
+.container-main{
+    max-width: 450px;
+    /* Centralizar */
+    margin: 4rem auto 0; 
+    background-color: white;
+    border-radius: 10px;
+    /* não deixar os elementos colado no fundo */
+    padding: 2rem;
+}
+
+/* Alinhando o titulo */
+.container-main header {
+    text-align: center;
+    border-bottom: 1.5px solid #ccc;
+    padding: 0 1rem 1rem;
+}
+
+/* ------------------------------------- */
+
+
+
+/* -------------Config Inputs----------- */
+input{
+    padding: 0.2rem 0.5rem;
+    outline: none;
+    margin: 4px 3px;
+    box-shadow: -1px 2px 0 #222,-1px 2px 0 black;
+    
+}
+/* ------------------------------------- */
+
+
+
+/* -------------Botões----------------- */
+button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    margin: 4px 3px ;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -1px 2px 0 #222;
+    animation: 2s;
+
+}
+
+button:active{
+    box-shadow: inset -2px 2px 0 #222;
+    font-size: 0.9rem
+}
+/* -------------------------------------- */
+
+
+
+
+/* ----------------FORMS----------------- */
+
+#form-add, #form-remove{
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#form-add, #form-remove p {
+    font-size: 1.2rem;
+}
+
+.container-control{
+    display: flex;
+}
+/* -------------------------------------- */
+
+
+
+
+/* ------------Display ToDo-------------- */
+
+.ToDo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.ToDo h3{
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.ToDo button {
+    /* Distancia entre os btn */
+    margin-left: 0.3rem;
+}
+
+/* Estilo para quando finalizar a tarefa */
+.check{
+    background-color: rgb(9, 185, 20);
+}
+
+.check h3 {
+    color: #fff;
+    text-decoration: line-through;
+}

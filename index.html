@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- JS -->
+    <script defer src="js/script.js"></script>
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" r eferrerpolicy="no-referrer" />
+    <title>ToDoList</title>
 </head>
+
 <body>
-    
+    <div class="container-main">
+        <header>
+            <h1>ToDoList</h1>
+        </header>
+        <!-- Estrutura de adcionar tarefas -->
+        <form id="form-add">
+            <p>Adcionar tarefas</p>
+            <div class="container-control">
+                <!-- input e btn para usuario incluir as tarefas -->
+                <input type="text" id="tarefa-input">
+                <button type="submit" id="btn-add">Adicionar</button>
+            </div>
+        </form>
+        <!-- remover tarefa -->
+        <form id="form-remove">
+            <p>Remover</p>
+            <div class="container-control">
+                <input type="text" class="remove-input">
+                <button type="submit">Remover</button>
+            </div>
+        </form>
+        <!-- Display -->
+        <div id="container-display">
+            <div class="ToDo check">
+                <h3>Teste</h3>
+                <button class="check-ToDo">
+                    Check
+                </button>
+                <button class="Remove-ToDo">
+                    Remover
+                </button>
+            </div>
+            <div class="ToDo ">
+                <h3>Teste 02</h3>
+                <button class="check-ToDo">
+                    Check
+                </button>
+                <button class="Remove-ToDo">
+                    Remover
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
