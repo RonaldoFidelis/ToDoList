@@ -1,6 +1,5 @@
 const forms = document.getElementById('form-add');
 
-
 const inTarefa = document.getElementById('tarefa-input');
 const btnTarefa = document.getElementById('btn-add');
 
@@ -32,6 +31,15 @@ function criarElementosTarefa(tarefa) {
     btRemove.type = 'button';
     btRemove.innerHTML = 'Remove';
 
+    btCheck.addEventListener('click', function (e) {
+        div.classList.add('check')
+    });
+
+    btRemove.addEventListener('click', function (e) {
+        btRemove.parentElement.remove(div);
+        // console.log(btRemove.parentElement); Sabe quem é o pai do elemento.
+        console.log(`Tarefa removida`);
+    });
 
     div.appendChild(h3);
     div.appendChild(btCheck);
@@ -46,6 +54,7 @@ function atribuir() {
     if (inTarefa.value != "") {
         display.appendChild(listaTarefas);
         inTarefa.value = "";
+        inTarefa.focus();
     } else {
         console.log("valor invalido")
     }

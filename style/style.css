@@ -12,10 +12,10 @@ body {
 
 
 /* ------------Div Main----------------- */
-.container-main{
+.container-main {
     max-width: 450px;
     /* Centralizar */
-    margin: 4rem auto 0; 
+    margin: 4rem auto 0;
     background-color: white;
     border-radius: 10px;
     /* não deixar os elementos colado no fundo */
@@ -34,13 +34,14 @@ body {
 
 
 /* -------------Config Inputs----------- */
-input{
+input {
     padding: 0.2rem 0.5rem;
     outline: none;
     margin: 4px 3px;
-    box-shadow: -1px 2px 0 #222,-1px 2px 0 black;
-    
+    box-shadow: -1px 2px 0 #222, -1px 2px 0 black;
+
 }
+
 /* ------------------------------------- */
 
 
@@ -54,7 +55,7 @@ button {
     font-size: 1rem;
     cursor: pointer;
     display: flex;
-    margin: 4px 3px ;
+    margin: 4px 3px;
     justify-content: center;
     align-items: center;
     box-shadow: -1px 2px 0 #222;
@@ -62,10 +63,11 @@ button {
 
 }
 
-button:active{
+button:active {
     box-shadow: inset -2px 2px 0 #222;
     font-size: 0.9rem
 }
+
 /* -------------------------------------- */
 
 
@@ -73,19 +75,20 @@ button:active{
 
 /* ----------------FORMS----------------- */
 
-#div-addTarefas{
+#div-addTarefas {
     padding: 1rem;
     margin-bottom: 0.5rem;
     border-bottom: 1px solid #ccc;
 }
 
-#div-addTarefas, p {
+#div-addTarefas p {
     font-size: 1.2rem;
 }
 
-.container-control{
+.container-control {
     display: flex;
 }
+
 /* -------------------------------------- */
 
 
@@ -93,7 +96,7 @@ button:active{
 
 /* ------------Display ToDo-------------- */
 
-.ToDo{
+.ToDo {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -101,9 +104,9 @@ button:active{
     border-bottom: 1px solid #ddd;
 }
 
-.ToDo h3{
+.ToDo h3 {
     flex: 1;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .ToDo button {
@@ -112,7 +115,7 @@ button:active{
 }
 
 /* Estilo para quando finalizar a tarefa */
-.check{
+.check {
     background-color: rgb(9, 185, 20);
 }
 
