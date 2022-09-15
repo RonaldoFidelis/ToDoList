@@ -72,7 +72,7 @@ function carregaTarefasSalvas () {
 }
 carregaTarefasSalvas();
 
-function rodar () {
+function rodarToDo () {
     criarTarefas(inTarefa.value);
 }
-btnTarefa.addEventListener("click", rodar);
+btnTarefa.addEventListener("click", rodarToDo);
