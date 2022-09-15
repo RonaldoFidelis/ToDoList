@@ -73,13 +73,13 @@ button:active{
 
 /* ----------------FORMS----------------- */
 
-#form-add, #form-remove{
+#div-addTarefas{
     padding: 1rem;
     margin-bottom: 0.5rem;
     border-bottom: 1px solid #ccc;
 }
 
-#form-add, #form-remove p {
+#div-addTarefas, p {
     font-size: 1.2rem;
 }
 
