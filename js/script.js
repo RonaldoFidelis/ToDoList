@@ -1,20 +1,7 @@
-const forms = document.getElementById('form-add');
-
 const inTarefa = document.getElementById('tarefa-input');
 const btnTarefa = document.getElementById('btn-add');
+const display = document.getElementById('container-display');
 
-/** Cola da estrutura:
- * 
-     <div class="ToDo check">
-            <h3>Teste</h3>
-            <button class="check-ToDo">
-                Check
-            </button>
-            <button class="Remove-ToDo">
-                Remover
-            </button>
-        </div>
- */
 function criarElementosTarefa(tarefa) {
     const div = document.createElement('div');
     const h3 = document.createElement('h3');
@@ -30,7 +17,7 @@ function criarElementosTarefa(tarefa) {
     btRemove.classList.add('Remove-ToDo');
     btRemove.type = 'button';
     btRemove.innerHTML = 'Remove';
-
+    // função check e remover das tarefas
     btCheck.addEventListener('click', function (e) {
         div.classList.add('check')
     });
@@ -39,6 +26,7 @@ function criarElementosTarefa(tarefa) {
         btRemove.parentElement.remove(div);
         // console.log(btRemove.parentElement); Sabe quem é o pai do elemento.
         console.log(`Tarefa removida`);
+        salvarTarefas();
     });
 
     div.appendChild(h3);
@@ -47,19 +35,44 @@ function criarElementosTarefa(tarefa) {
     return div;
 };
 
-function atribuir() {
-    const display = document.getElementById('container-display');
-    display.value = "";
-    let listaTarefas = criarElementosTarefa(inTarefa.value);
-    if (inTarefa.value != "") {
+function criarTarefas(tarefa) {
+    
+    let listaTarefas = criarElementosTarefa(tarefa);
+    if (tarefa.value != "") {
         display.appendChild(listaTarefas);
         inTarefa.value = "";
         inTarefa.focus();
     } else {
         console.log("valor invalido")
+    };
+    salvarTarefas();
+};
+//Salvar as tarefas no localStorage
+function salvarTarefas() {
+    const liTarefas = display.querySelectorAll('div');
+    const listaDeTarefas = [];
+
+    for (let display of liTarefas) {
+        let tarefaTexto = display.innerText;
+        tarefaTexto = tarefaTexto.replace('\nCheck\nRemove', '').trim();
+        listaDeTarefas.push(tarefaTexto);
     }
+
+    const tarefasJSON = JSON.stringify(listaDeTarefas);
+    localStorage.setItem('Tarefas', tarefasJSON);
 };
 
-btnTarefa.addEventListener("click", atribuir);
+function carregaTarefasSalvas () {
+    const tarefas = localStorage.getItem('Tarefas');
+    const listaTarefas = JSON.parse(tarefas);
 
+    for (let tarefas of listaTarefas) {
+        criarTarefas(tarefas);
+    }
+}
+carregaTarefasSalvas();
 
+function rodar () {
+    criarTarefas(inTarefa.value);
+}
+btnTarefa.addEventListener("click", rodar);
