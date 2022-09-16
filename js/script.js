@@ -49,15 +49,6 @@ function salvarTarefas() {
     localStorage.setItem('Tarefas', tarefasJSON);
 };
 
-function carregaTarefasSalvas() {
-    const tarefas = localStorage.getItem('Tarefas');
-    const listaTarefas = JSON.parse(tarefas);
-
-    for (let tarefas of listaTarefas) {
-        criarTarefas(tarefas);
-    }
-}
-carregaTarefasSalvas();
 function criarTarefas(tarefa) {
     let listaTarefas = criarElementosTarefa(tarefa);
 
@@ -66,6 +57,17 @@ function criarTarefas(tarefa) {
     inTarefa.focus();
     salvarTarefas();
 };
+
+function carregaTarefasSalvas() {
+    const tarefas = localStorage.getItem('Tarefas');
+    const listaTarefas = JSON.parse(tarefas);
+
+    for (let tarefas of listaTarefas) {
+        criarTarefas(tarefas);
+    }
+}
+carregaTarefasSalvas()
+
 function rodarToDo() {
     const value = inTarefa.value;
     if (value != '') {
@@ -73,6 +75,5 @@ function rodarToDo() {
     } else {
         window.alert('Digite uma tarefa.');
     }
-
 }
 btnTarefa.addEventListener("click", rodarToDo);
