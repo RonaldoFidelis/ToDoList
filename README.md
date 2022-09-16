@@ -10,7 +10,7 @@
 
 # Detalhe do projeto
 
-- Projeto feito apenas com JavaScript, Html e Css3, e usando o localStorage para deixar as tarefas salvas.
+- Projeto feito apenas com JavaScript, Html e Css3.
 
 # Link do projeto
 
