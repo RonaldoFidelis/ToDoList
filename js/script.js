@@ -35,19 +35,6 @@ function criarElementosTarefa(tarefa) {
     return div;
 };
 
-function criarTarefas(tarefa) {
-    let listaTarefas = criarElementosTarefa(tarefa);
-
-    if (tarefa.value != "") {
-        display.appendChild(listaTarefas);
-        inTarefa.value = "";
-        inTarefa.focus();
-    } else {
-        console.log("valor invalido")
-    };
-    salvarTarefas();
-};
-//Salvar as tarefas no localStorage
 function salvarTarefas() {
     const liTarefas = display.querySelectorAll('div');
     const listaDeTarefas = [];
@@ -71,8 +58,21 @@ function salvarTarefas() {
 //     }
 // }
 // carregaTarefasSalvas();
+function criarTarefas(tarefa) {
+    let listaTarefas = criarElementosTarefa(tarefa);
 
+    display.appendChild(listaTarefas);
+    inTarefa.value = "";
+    inTarefa.focus();
+    salvarTarefas();
+};
 function rodarToDo() {
-    criarTarefas(inTarefa.value);
+    const value = inTarefa.value;
+    if (value != '') {
+        criarTarefas(value);
+    } else {
+        console.log('valor invalido!');
+    }
+
 }
 btnTarefa.addEventListener("click", rodarToDo);
