@@ -36,8 +36,8 @@ function criarElementosTarefa(tarefa) {
 };
 
 function criarTarefas(tarefa) {
-    
     let listaTarefas = criarElementosTarefa(tarefa);
+
     if (tarefa.value != "") {
         display.appendChild(listaTarefas);
         inTarefa.value = "";
@@ -62,7 +62,7 @@ function salvarTarefas() {
     localStorage.setItem('Tarefas', tarefasJSON);
 };
 
-function carregaTarefasSalvas () {
+function carregaTarefasSalvas() {
     const tarefas = localStorage.getItem('Tarefas');
     const listaTarefas = JSON.parse(tarefas);
 
@@ -72,7 +72,7 @@ function carregaTarefasSalvas () {
 }
 carregaTarefasSalvas();
 
-function rodarToDo () {
+function rodarToDo() {
     criarTarefas(inTarefa.value);
 }
 btnTarefa.addEventListener("click", rodarToDo);
